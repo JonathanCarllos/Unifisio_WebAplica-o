@@ -1,0 +1,37 @@
+﻿@model Unifisio_WebAplicação.Models.Paciente
+
+@{
+    ViewBag.Title = "Login Detalhes";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+<div class="text-center">
+    <h2>Email e Senha</h2>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>     
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+
+    </dl>
+</div>
+<p>    
+    @Html.ActionLink("Volta para a lista", "ListaUsuario")
+</p>

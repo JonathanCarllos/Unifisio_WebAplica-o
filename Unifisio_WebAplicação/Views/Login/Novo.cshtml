@@ -1,0 +1,51 @@
+﻿@model Unifisio_WebAplicação.Models.Usuario
+
+@{
+    ViewBag.Title = "Novo Usuário";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+<div class="text-center">
+    <h2>Novo Usuário</h2>
+</div>
+
+
+@using (Html.BeginForm("Salvar", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Usuário</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.PasswordFor(model => model.Senha, htmlAttributes: new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Tipousuario, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("TipoUsuario", new SelectList(ViewBag.TipoUsuarios, "Definicao", "Definicao"), "Selecione o Tipo de Usuário",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Tipousuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-primary" /> || @Html.ActionLink("Volta para a lista", "ListaUsuarios")
+            </div>
+        </div>
+    </div>
+}
+
+

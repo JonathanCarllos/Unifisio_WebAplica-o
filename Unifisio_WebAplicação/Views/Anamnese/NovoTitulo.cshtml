@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Unifisio_WebAplicação.Models.Anamnese>
+
+@{
+    ViewBag.Title = "Novo titulo de questionário";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+<h2>Novo Questionário</h2>
+
+<p>
+    @Html.ActionLink("Clique aqui para criar um novo questionário", "NovoQuestionario", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.titulo)
+            </th>
+            <th></th>
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.titulo)
+            </td>
+            <td align="right">
+                @Html.ActionLink("Excluir", "DeletarQuestionario", new { id = item.id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+
+    }
+
+</table>

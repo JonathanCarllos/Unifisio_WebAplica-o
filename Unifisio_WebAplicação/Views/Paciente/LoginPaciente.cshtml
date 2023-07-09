@@ -1,0 +1,49 @@
+﻿@model Unifisio_WebAplicação.Models.Paciente
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutSemNavbar.cshtml";
+
+}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #login-container {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 30px;
+        margin-top: 1vh;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        font-family: Arial;
+    }
+</style>
+
+@using (Html.BeginForm("PacienteLogado","Paciente",FormMethod.Post))
+{
+    <div class="text-center">
+        <img src="~/img/LOGO FACU.jpg" width="350" height="110" />
+    </div>
+    <div id="login-container">        
+        <h4>e-Mail</h4>
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Email" } })
+        <br />
+        <h4>Senha</h4>
+        @Html.PasswordFor(model => model.Senha, htmlAttributes: new { @class = "form-control col-12", placeholder = "Senha" })
+        <br />
+        <button class="btn btn-dark btn-lg btn-block" type="submit">ACESSAR</button>
+        <p>&copy; @DateTime.Now.Year - <strong>UNIFISIO</strong></p>
+    </div>
+}

@@ -1,0 +1,260 @@
+﻿@model Unifisio_WebAplicação.Models.Paciente
+
+@{
+    ViewBag.Title = "Excluir Paciente";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+<div class="text-center">
+    <h3>Tem certeza que deseja excluir?</h3>
+</div>
+
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profissao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCivil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCivil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CelularResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CelularResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CpfResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpfResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneConv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneConv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogradouroConv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogradouroConv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroConv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroConv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BairroConv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BairroConv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CidadeConv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CidadeConv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CepConv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CepConv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UfConvenio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UfConvenio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPlanos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPlanos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObsMedica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObsMedica)
+        </dd>
+
+    </dl>
+    @using (Html.BeginForm("Deletar", "Paciente", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+        <div class="row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Excluir" class="btn btn-danger" /> || @Html.ActionLink("Volta para a lista", "Index")
+            </div>
+        </div>
+    }
+</div>
+

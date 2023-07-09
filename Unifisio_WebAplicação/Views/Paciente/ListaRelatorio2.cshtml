@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Unifisio_WebAplicação.Models.Paciente>
+
+@{
+    ViewBag.Title = "Lista Relatório";
+    Layout = "~/Views/Shared/_LayoutLogadoADM.cshtml";
+}
+<br />
+<div class="text-center">
+    <h2>Relatório do paciente</h2>
+</div>
+<p>
+    @Html.ActionLink("Volta para a lista","ListaExercicios")
+</p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRelatorio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdRelatorio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExercicioFeitos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Relatorio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRelatorio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdRelatorio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExercicioFeitos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Relatorio)
+            </td>
+        </tr>
+
+    }
+
+</table>

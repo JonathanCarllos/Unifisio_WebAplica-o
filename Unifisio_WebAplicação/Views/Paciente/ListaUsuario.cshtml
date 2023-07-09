@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Unifisio_WebAplicação.Models.Paciente>
+
+@{
+    ViewBag.Title = "Lista Usuário";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+<div class="text-center">
+    <h2>Criar senha pro paciente</h2>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        
+        <td align="right">
+            @Html.ActionLink("Criar Senha", "LoginPacienteNovo", new { id=item.Id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Detalhes", "LoginDetalhes", new { id=item.Id }, new {@class = "btn btn-success"} ) 
+    </tr>
+}
+
+</table>

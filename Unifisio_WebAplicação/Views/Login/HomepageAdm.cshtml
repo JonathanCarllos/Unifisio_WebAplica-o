@@ -1,0 +1,32 @@
+﻿@model Unifisio_WebAplicação.Models.Usuario
+@{
+    ViewBag.Title = "Bem vindo";
+    Layout = "~/Views/Shared/_LayoutLogadoAdm.cshtml";
+
+}
+<br />
+<div class="text-center">
+    <h4>
+        BEM-VINDO ao
+        <br />
+        <img src="~/img/LOGO FACU.jpg" />
+    </h4>
+</div>
+<div class="text-center">
+    <h5>Acesso Rápido para as listas</h5>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link"> @Html.ActionLink("Clique aqui para acessar a lista de pacientes", "Index", "Paciente")</a>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link"> @Html.ActionLink("Clique aqui para acessar a lista de fisioterapeutas", "Index", "Fisioterapeuta")</a>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link"> @Html.ActionLink("Clique aqui para acessar a lista de alunos", "Index", "Aluno")</a>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link"> @Html.ActionLink("Clique aqui para criar uma anamnese", "Index", "Anamnese")</a>
+</div>
+
+@Html.HiddenFor(model => model.Logado)
+

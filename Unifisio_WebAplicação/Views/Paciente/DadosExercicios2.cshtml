@@ -1,0 +1,82 @@
+﻿@model Unifisio_WebAplicação.Models.Paciente
+
+@{
+    ViewBag.Title = "Dados dos Exercícios";
+    Layout = "~/Views/Shared/_LayoutLogadoPaciente.cshtml";
+}
+<br />
+<div class="text-center">
+    <h4>Exercícios</h4>
+</div>
+@Html.ActionLink("Volta para a lista", "ListaExercicios3", new { Id = Session["Id"] })
+<br />
+
+<table class="table table-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Link</th>
+            <th scope="col">Repetições</th>
+            <th scope="col">Intervalo</th>
+            <th scope="col">Séries</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>@Html.DisplayFor(model => model.Exercicios1)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos)</td>
+            <td>@Html.DisplayFor(model => model.Series)</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>@Html.DisplayFor(model => model.Exercicios2)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes2)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos2)</td>
+            <td>@Html.DisplayFor(model => model.Series2)</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>@Html.DisplayFor(model => model.Exercicios3)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes3)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos3)</td>
+            <td>@Html.DisplayFor(model => model.Series3)</td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>@Html.DisplayFor(model => model.Exercicios4)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes4)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos4)</td>
+            <td>@Html.DisplayFor(model => model.Series4)</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>@Html.DisplayFor(model => model.Exercicios5)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes5)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos5)</td>
+            <td>@Html.DisplayFor(model => model.Series5)</td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>@Html.DisplayFor(model => model.Exercicios6)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes6)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos6)</td>
+            <td>@Html.DisplayFor(model => model.Series6)</td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>@Html.DisplayFor(model => model.Exercicios7)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes7)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos7)</td>
+            <td>@Html.DisplayFor(model => model.Series7)</td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>@Html.DisplayFor(model => model.Exercicios8)</td>
+            <td>@Html.DisplayFor(model => model.Repeticoes8)</td>
+            <td>@Html.DisplayFor(model => model.Intervalos8)</td>
+            <td>@Html.DisplayFor(model => model.Series8)</td>
+        </tr>
+    </tbody>
+</table>

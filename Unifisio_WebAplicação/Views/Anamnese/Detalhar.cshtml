@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>A N A M N E S E </title>
+    <style>
+        .col-3 {
+            float: left;
+            width: 30%;
+        }
+
+        .col-6 {
+            float: left;
+            width: 60%;
+        }
+
+        .col-3-last {
+            float: left;
+            width: 30%;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<div class="row flexrow2 ">
+
+    <div class="logo">
+        <div align="center">
+            <p><img src="~/img/LOGO cortado.jpg" width="450" height="125"/></p><br /><br /><br />
+
+        </div>
+    </div>
+    <div class="row flexrow2 ">
+        <div class="col-12 border fundoCinza" align="left">
+            <p>
+                <h5 class="font16">NOME:__________________________________________________________________________________________________________</h5>
+                <h5 class="font16">IDADE:______&nbsp;&nbsp;&nbsp;SEXO:&nbsp;&nbsp;M(&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;F(&nbsp;&nbsp;&nbsp;)</h5>
+                <h5 class="font16">END:____________________________________________________________________________________________________________</h5>
+                <h5 class="font16">TELEFONE:&nbsp;(&nbsp;&nbsp;)__________-_________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOME&nbsp;&nbsp;DO&nbsp;&nbsp;CUIDADOR/RESPONSÁVEL:_____________________________________________</h5>
+                <h5 class="font16">ESTAGIÁRIO(A):__________________________________________________________________&nbsp;&nbsp;&nbsp;DATA&nbsp;&nbsp;AVAL.&nbsp;&nbsp;FISIO:____/____/____</h5>
+                <h5 class="font16">DIAGNÓSTICO:___________________________________________________________________________________________________</h5>
+            </p>
+            <br /><br />
+        </div>
+    </div>
+    <div class="col-12 border fundoCinza" align="center">
+        <h5 class="font16"> F I C H A&nbsp;&nbsp;&nbsp;&nbsp;D E&nbsp;&nbsp;&nbsp;&nbsp;A N A M N E S E </h5>
+    </div>
+
+
+    @foreach (var ListaAnamnese in ViewBag.Perguntas)
+    {
+        <body>
+            <div class="col-3">
+                <h1></h1>
+                <p>@ListaAnamnese.pergunta</p>
+            </div>
+            <div class="col-6">
+                <h1></h1>
+                <p>
+                    @if (ListaAnamnese.tipo == "SN")
+                    {
+                        <div> Sim (&nbsp;&nbsp;) Não(&nbsp;&nbsp;) </div>
+                    }
+
+                    else
+                    {
+                        <div>______________________________</div>
+                    }
+                </p>
+            </div>
+        </body>
+    }
+</div>
+</html>
+
+
+

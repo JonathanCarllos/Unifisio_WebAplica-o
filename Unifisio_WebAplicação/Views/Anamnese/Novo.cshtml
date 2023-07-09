@@ -1,0 +1,19 @@
+﻿@model Unifisio_WebAplicação.Models.AnamneseItens
+
+@{
+    ViewBag.Title = "Novo";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+<h2>Nova pergunta</h2>
+@using (Html.BeginForm("Salvar", "Anamnese", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.id_anamenese);
+    @Html.EditorFor(model => model.pergunta, new { htmlAttributes = new { @class = "form-control col-12" } })
+    @Html.DropDownList("tipo", new SelectList(ViewBag.LstTiposPerguntas, "tipo", "tipo"), "Selecione o tipo", new { @class = "form-control col-12" })
+    <div class="row">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Salvar" class="btn btn-primary" /> || @Html.ActionLink("Volta para lista", "Index")
+        </div>
+    </div>    
+}

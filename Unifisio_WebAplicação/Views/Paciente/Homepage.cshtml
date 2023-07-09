@@ -1,0 +1,25 @@
+﻿@model Unifisio_WebAplicação.Models.Paciente
+@{
+    ViewBag.Title = "Bem-vindo";
+    Layout = "~/Views/Shared/_LayoutLogadoPaciente.cshtml";
+
+}
+<br />
+@Html.HiddenFor(moodel => Model.Logado)
+@Html.HiddenFor(model => model.Id)
+<div class="text-center">
+    <h4>
+        BEM-VINDO ao
+        <br />
+        <img src="~/img/LOGO FACU.jpg" />
+    </h4>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link" @Html.ActionLink("Clique aqui para acessar os seus dados", "DadosPaciente", new { Id = Session["Id"] })</a>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link" @Html.ActionLink("Clique aqui para enviar o Relatório", "Relatorio", new { Id = Session["Id"] })</a>
+</div>
+<div class="alert alert-primary" role="alert">
+    <a class="nav-link" @Html.ActionLink("Clique aqui para acessar os seus Exercícios", "DadosExerciciosPaciente", new { Id = Session["Id"] })</a>
+</div>

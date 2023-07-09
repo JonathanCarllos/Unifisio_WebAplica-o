@@ -1,0 +1,76 @@
+﻿@model Unifisio_WebAplicação.Models.Contato
+
+@{
+    ViewBag.Title = "Contatos";
+}
+<br />
+<div class="text-center">
+    <h2>Serviço de atendimento ao consumidor</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <p>Por aqui você pode tirar dúvidas, dar sugestões, pedir informações e resolver problemas relacionados ao UNIFISIO.<p />
+        <img src="~/img/Call center-amico.png" width="500" height="500" />
+        <h5>Kauê Ribeiro dos Santos Silva</h5>
+        <strong>e-Mail:</strong>   <a href="mailto:kaue._ribeiro@hotmail.com">kaue._ribeiro@hotmail.com</a><br />
+        <strong>WhatsApp:</strong> <a href="https://wa.me/+5511976268892">(11) 97626-8892</a>
+
+        <h5>Jonathan Carlos Moura da Silva</h5>
+        <strong>e-Mail:</strong>   <a href="mailto:jonathan.carllos1994@gmail.com">jonathan.carllos1994@gmail.com</a><br />
+        <strong>WhatsApp:</strong> <a href="https://wa.me/+5511984626235">(11) 98462-6235</a>
+    </div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("Enviar", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Nome" } })
+                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.LabelFor(model => model.Assunto, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Assunto, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Assunto" } })
+                        @Html.ValidationMessageFor(model => model.Assunto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-12">
+                        @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        @Html.TextAreaFor(model => model.Descricao, 12, 50, new { htmlAttributes = new { @class = "form-control col-12" } })
+                        @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-12">
+                        <input type="submit" value="Enviar" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

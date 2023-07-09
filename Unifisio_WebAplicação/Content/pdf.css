@@ -1,0 +1,248 @@
+﻿.printDetails > div {
+    display: inline-block;
+}
+
+.page {
+    margin: 10cm 2cm 1cm 2cm;
+    margin-top: 50px;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+    -webkit-print-color-adjust: exact;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header, .header-space {
+    height: 800px;
+}
+
+.footer, .footer-space {
+    height: 200px;
+}
+
+.header {
+    position: fixed;
+    left: 2cm;
+    top: 0.5cm;
+}
+
+.footer {
+    position: fixed;
+    left: 2cm;
+    bottom: 20px;
+    top: 20px;
+    content: '| Página ' counter(page);
+}
+
+.flexrow {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex !important;
+}
+
+    .flexrow > div {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+
+.page-break {
+    page-break-before: always;
+}
+
+.avoid {
+    page-break-inside: avoid !important;
+    margin: 4px 0 4px 0; /* to keep the page break from cutting too close to the text in the div */
+}
+
+body {
+    font: 9pt Arial, Calibri, "Times New Roman", Times, serif;
+    color: #000;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 18pt;
+}
+
+h3 {
+    font-size: 14pt;
+}
+
+h5 {
+    font-size: 14pt;
+}
+
+h6 {
+    font-size: 8pt;
+}
+
+.fundoCinza {
+    background-color: lightgrey;
+}
+
+.fontLabel {
+    font-size: 10pt;
+    font-weight: bolder;
+}
+
+caixa {
+    border: 5px solid black;
+}
+
+.font12 {
+    font-size: 11pt;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.font14 {
+    font-size: 14pt;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.font16 {
+    font-size: 16pt;
+    font-weight: bolder;
+    line-height: 1.5;
+}
+
+
+.fontLabelRPT {
+    font-size: 12pt;
+    font-weight: bolder;
+}
+
+.fontGridRPT {
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.labelMini {
+    font-size: 8pt;
+    font-weight: normal;
+}
+
+.FonteTexto {
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.printableFooter {
+    display: block;
+    position: fixed;
+    bottom: 0;
+}
+
+.agenda tr {
+    overflow: hidden;
+    height: 10px;
+    white-space: nowrap;
+}
+
+/*body {
+   background: white;
+}*/
+
+
+.landscape {
+    -webkit-transform: rotate(-90deg);
+}
+
+/*@media print {
+   body,
+   page {
+      margin: 0;
+      box-shadow: 0;
+   }
+}
+
+.header {
+   padding-top: 10px;
+   text-align: center;
+   border: 2px solid #ddd;
+}
+
+table {
+   border-collapse: collapse;
+   width: 100%;
+   font-size: 80%;
+}
+
+   table th {
+      background-color: #ddd;
+      color: white;
+      text-align: center;
+   }
+
+th,
+td {
+   border: 1px solid #ddd;
+   text-align: left;
+}
+
+tr:nth-child(even) {
+   background-color: #ddd
+}
+
+*/
+
+
+/*{
+   background: transparent !important;
+   color: #000 !important;
+   text-shadow: none !important;
+   filter: none !important;
+   -ms-filter: none !important;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   line-height: 1.4em;
+}
+.flexrow {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: flex !important;
+}
+
+   .flexrow > div {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+   }
+
+body {
+   font: 12pt Arial, Calibri;
+   color: #000;
+}
+
+h1 {
+   font-size: 16pt
+}
+
+h2 {
+   font-size: 18pt;
+}
+
+h3 {
+}
+
+nav, footer, video, audio, object, embed {
+   display: none;
+}*/
+

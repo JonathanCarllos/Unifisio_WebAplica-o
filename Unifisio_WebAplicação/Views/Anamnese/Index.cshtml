@@ -1,0 +1,45 @@
+﻿@model Unifisio_WebAplicação.Models.AnamneseItens
+@{
+    ViewBag.Title = "Anamnese";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+}
+<br />
+
+<h2>Crie uma Anamnese</h2>
+@using (Html.BeginForm("NovoTitulo", "Anamnese", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Novo questionário" class="btn btn-primary" />
+        </div>
+    </div>
+
+}
+<br />
+
+@using (Html.BeginForm("Novo", "Anamnese", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.id_anamenese)
+    @Html.DropDownList("Anamnese", new SelectList(ViewBag.LstAnamnese, "id", "titulo"), "Selecione o Questionário", new { @onchange = "CarregaItens();", @class = "form-control col-12" })
+    <br />
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4">
+            <input type="submit" value="Nova pergunta" class="btn btn-primary" />
+        </div>
+        <div class="col-4">
+
+            <a href="" id="linkPDF" class="btn btn-primary">GERAR PDF</a>
+        </div>
+    </div>
+
+
+
+}
+<br />
+<p>QUESTÕES CADASTRADAS</p>
+
+<table id="tblAnamnese" name="tblAnamnese">
+</table>
+
+
+<script src="~/Scripts/Anamnese.js"></script>

@@ -1,0 +1,236 @@
+﻿@model Unifisio_WebAplicação.Models.Paciente
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+    ViewBag.Title = "Nova Seção";
+}
+<br />
+<div class="text-center">
+    <h3>Nova Seção</h3>
+</div>
+
+@using (Html.BeginForm("SalvarExercicios", "Paciente", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Secao, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Secao, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Secao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios1, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios1, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios1, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios2, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios2, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios2, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes2, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes2", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes2, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos2, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos2", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos2, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series2, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series2", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios3, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios3, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios3, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes3, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes3", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes3, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos3, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos3", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos3, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series3, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series3", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios4, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios4, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios4, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes4, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes4", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes4, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos4, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos4", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos4, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series4, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series4", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios5, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios5, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios5, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes5, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes5", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes5, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos5, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos5", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos5, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series5, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series5", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios6, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios6, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios6, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes6, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes6", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes6, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos6, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos6", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos6, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series6, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series6", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series6, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios7, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios7, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios7, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes7, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes7", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes7, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos7, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos7", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos7, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series7, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series7", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series7, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Exercicios8, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.EditorFor(model => model.Exercicios8, new { htmlAttributes = new { @class = "form-control col-12" } })
+                @Html.ValidationMessageFor(model => model.Exercicios8, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Repeticoes8, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Repeticoes8", new SelectList(ViewBag.repeticao, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Repeticoes8, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Intervalos8, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Intervalos8", new SelectList(ViewBag.intervalo, "Definicao", "Definicao"), "Selecione",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Intervalos8, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Series8, htmlAttributes: new { @class = "control-label col-12" })
+                @Html.DropDownList("Series8", new SelectList(ViewBag.series, "Definicao", "Definicao"), "Selecione a Qtd.",
+                new { @class = "form-control col-12" })
+                @Html.ValidationMessageFor(model => model.Series8, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Enviar" class="btn btn-primary" /> || @Html.ActionLink("Volta para a lista", "ListaExercicios")
+            </div>
+        </div>
+    </div>
+}

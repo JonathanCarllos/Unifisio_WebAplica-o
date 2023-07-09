@@ -1,0 +1,33 @@
+﻿@model Unifisio_WebAplicação.Models.Usuario
+@{
+    ViewBag.Title = "Bem vindo";
+    Layout = "~/Views/Shared/_LayoutLogado.cshtml";
+
+}
+<br />
+<style>
+    section{
+        background-position:center;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+
+    }
+
+    section:nth-of-type(1) {
+        background-image: url('/img/LOGO FACU.jpg');
+    }
+</style>
+<section>
+    <div class="alert alert-primary" role="alert">
+        <a class="nav-link"> @Html.ActionLink("Clique aqui para acessar a lista de pacientes", "Index", "Paciente")</a>
+    </div>
+    <div class="alert alert-primary" role="alert">
+        <a class="nav-link"> @Html.ActionLink("Clique aqui para acessar a lista de fisioterapeutas", "Index", "Fisioterapeuta")</a>
+    </div>
+    <div class="alert alert-primary" role="alert">
+        <a class="nav-link"> @Html.ActionLink("Clique aqui para criar uma anamnese", "Index", "Anamnese")</a>
+    </div>
+</section>
+<br />
+@Html.DisplayFor(model => model.Logado)

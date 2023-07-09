@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - UNIFISIO</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/dashboard.css")
+    <link rel="shortcut icon" sizes="144x144" href="~/img/LogoUNIFISIO.ico" />
+</head>
+<body>
+
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3"><img src="~/img/logopng.png" style="width:85%" /></a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                @Html.ActionLink("Sair", "Index", "Home", null, new { @class = "btn btn-danger" })
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" @Html.ActionLink("Dashboard", "Homepage", "Paciente")</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" @Html.ActionLink("Informações", "DadosPaciente", new { Id = Session["Id"] })</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" @Html.ActionLink("Relatório", "Relatorio", new { Id = Session["Id"] })</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" @Html.ActionLink("Exercícios", "ListaExercicios3", new { Id = Session["Id"] })</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="container body-content">
+                    @RenderBody()
+                    <hr />
+                </div>
+
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
